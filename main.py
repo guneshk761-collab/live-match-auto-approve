@@ -29,7 +29,7 @@ async def approve_request(
         logging.exception("Failed to approve join request")
 
 def main():
-    token = os.environ.get("BOT_TOKEN")
+    token = os.environ.get("BOT_TOKEN", "").strip()
 
     if not token:
         raise RuntimeError("BOT_TOKEN is missing")
